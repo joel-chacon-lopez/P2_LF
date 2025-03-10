@@ -10,6 +10,7 @@ public class DFA {
     private String firstState; //initial state
     private Set<String> finalStates; //set of final states
     private Map<String, Map<Character, String>> transitions; //transitions
+    private String trapState; //trap state
     
     /*A constructor that builds a DFA with the set of state names 
      * given as arguments. 
@@ -18,6 +19,7 @@ public class DFA {
         this.states = new HashSet<String>(Arrays.asList(states));
         this.finalStates = new HashSet<String>();
         this.transitions = new HashMap<String, Map<Character, String>>();
+        this.trapState = "TRAP";
         for (String state : states) {
             transitions.put(state, new HashMap<>());
         }
@@ -55,9 +57,11 @@ public class DFA {
             String actualState = firstState;
             for (char c : input.toCharArray()) {
                 if (!transitions.containsKey(actualState) || !transitions.get(actualState).containsKey(c)) {
-                    return false; //no transition defined (so, its a TRAP!)
+                    //no transition defined (so, its a TRAP!)
+                    actualState = trapState;
+                    break;
                 }
-                actualState = transitions.get(actualState).get(c);
+                else actualState = transitions.get(actualState).get(c);
             }
             return finalStates.contains(actualState);
         }
