@@ -3,6 +3,6 @@
 # Project Overview
 
 # Members contriubution
--- *Mohamed**:
--- *Joel**:
--- *Pau**:
+  **Mohamed**:
+  **Joel**:
+  **Pau**:
