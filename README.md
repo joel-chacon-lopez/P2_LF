@@ -4,5 +4,5 @@
 
 # Members contriubution
   **Mohamed**:
-  **Joel:**:
-  **Pau:**:
+  **Joel**:
+  **Pau**:
