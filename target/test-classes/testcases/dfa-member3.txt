@@ -19,7 +19,7 @@ transitions = {
     (q4, 0, q1),
     (q4, 1, q5),
     (q5, 0, q3),
-    (q5, 1, q5),
+    (q5, 1, q5)
 }
 ini = q0
 finals = {q4, q5}
